@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
  
 import Layout from './components/Layout/Layout'
 import Shopping from './containers/Shopping/Shopping'
+import Checkout from './containers/Checkout/Checkout'
 
 class App extends React.Component {
   render() {
@@ -11,7 +12,7 @@ class App extends React.Component {
         <Router>
           <Layout>
             <Switch>
-              <Route path="/checkout" render={() => <h2>Checkout Page</h2>} />
+              <Route path="/checkout" component={Checkout} />
               <Route path="/" exact component={Shopping} />
             </Switch>
           </Layout>

@@ -64,24 +64,27 @@ class Shopping extends React.Component {
   }
 
   purchaseContinueHandler = () => {
-    this.setState({ loading: true })
 
-    const order = {
-      products: this.state.products,
-      price: this.state.totalPrice,
-      customer: {
-        name: 'majid',
-        email: 'majid@gmail.com',
-      },
-    }
-    axios
-      .post('/orders.json', order)
-      .then((response) => {
-        this.setState({ loading: false, purchased: false })
-      })
-      .catch((error) => {
-        this.setState({ loading: false, purchased: false })
-      })
+    this.props.history.push('/checkout')
+
+    // this.setState({ loading: true })
+
+    // const order = {
+    //   products: this.state.products,
+    //   price: this.state.totalPrice,
+    //   customer: {
+    //     name: 'majid',
+    //     email: 'majid@gmail.com',
+    //   },
+    // }
+    // axios
+    //   .post('/orders.json', order)
+    //   .then((response) => {
+    //     this.setState({ loading: false, purchased: false })
+    //   })
+    //   .catch((error) => {
+    //     this.setState({ loading: false, purchased: false })
+    //   })
   }
 
   render() {
