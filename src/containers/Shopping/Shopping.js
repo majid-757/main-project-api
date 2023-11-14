@@ -23,6 +23,7 @@ class Shopping extends React.Component {
   }
 
   componentDidMount() {
+    console.log(this.props)
     axios.get('https://react-redux-main1-1cd6e-default-rtdb.asia-southeast1.firebasedatabase.app/products.json').then((response) => {
       this.setState({ products: response.data })
     })
@@ -69,8 +70,8 @@ class Shopping extends React.Component {
       products: this.state.products,
       price: this.state.totalPrice,
       customer: {
-        name: 'Masood',
-        email: 'sadri.masood@gmail.com',
+        name: 'majid',
+        email: 'majid@gmail.com',
       },
     }
     axios
