@@ -23,7 +23,6 @@ class Shopping extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.props)
     axios.get('https://react-redux-main1-1cd6e-default-rtdb.asia-southeast1.firebasedatabase.app/products.json').then((response) => {
       this.setState({ products: response.data })
     })
@@ -67,24 +66,24 @@ class Shopping extends React.Component {
 
     this.props.history.push('/checkout')
 
-    // this.setState({ loading: true })
+    this.setState({ loading: true })
 
-    // const order = {
-    //   products: this.state.products,
-    //   price: this.state.totalPrice,
-    //   customer: {
-    //     name: 'majid',
-    //     email: 'majid@gmail.com',
-    //   },
-    // }
-    // axios
-    //   .post('/orders.json', order)
-    //   .then((response) => {
-    //     this.setState({ loading: false, purchased: false })
-    //   })
-    //   .catch((error) => {
-    //     this.setState({ loading: false, purchased: false })
-    //   })
+    const order = {
+      products: this.state.products,
+      price: this.state.totalPrice,
+      customer: {
+        name: 'majid',
+        email: 'majid@gmail.com',
+      },
+    }
+    axios
+      .post('/orders.json', order)
+      .then((response) => {
+        this.setState({ loading: false, purchased: false })
+      })
+      .catch((error) => {
+        this.setState({ loading: false, purchased: false })
+      })
   }
 
   render() {
