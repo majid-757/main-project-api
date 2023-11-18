@@ -104,8 +104,6 @@ class Account extends React.Component {
 
         updatedElement.used = true
 
-
-
         updatedForm[inputElement] = updatedElement
 
         this.setState({ form: updatedForm })
@@ -123,6 +121,7 @@ class Account extends React.Component {
             })
         }
 
+        
         return (
             <div className="account">
                 <h2>Account</h2>
@@ -130,13 +129,13 @@ class Account extends React.Component {
                     {elementsArray.map((item) => {
                         return (
                             <Input 
-                            key={item.id} 
-                            elementType={item.config.elementType} 
-                            elementConfig={item.config.elementConfig}
-                            value={item.config.value}
-                            invalid={!item.config.valid}
-                            used={item.config.used}
-                            change={(event) => this.inputChangeHandler(event, item.id)}
+                                key={item.id} 
+                                elementType={item.config.elementType} 
+                                elementConfig={item.config.elementConfig}
+                                value={item.config.value}
+                                invalid={!item.config.valid}
+                                used={item.config.used}
+                                change={(event) => this.inputChangeHandler(event, item.id)}
                             />
                         )
                     })}

@@ -5,6 +5,7 @@ import './Input.css'
 
 
 const Input = (props) => {
+    
     let inputElement = null
     const inputClass = ['input-element']
 
@@ -33,6 +34,7 @@ const Input = (props) => {
             onChange={props.change}
             />
     }
+
 
     return (
         <div className="input">{inputElement}</div>
